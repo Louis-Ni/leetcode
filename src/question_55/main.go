@@ -1,9 +1,12 @@
 package main
 
+import "fmt"
+
 const LENGTH int = 0
 func main() {
 	nums := []int{3,1,0,2,4}
 	canJump(nums)
+
 }
 func canJump(nums []int) bool {
 	var dp = make([]int, len(nums))
@@ -11,8 +14,25 @@ func canJump(nums []int) bool {
 		dp[i]  = 0
 	}
 	dp[len(nums)-1] = 1
-	ans:= recurrentJump(0, nums, &dp)
+	//ans:= recurrentJump(0, nums, &dp)
+	ans := nonRecurrentJump(nums, &dp)
+	fmt.Println(ans)
 	return ans
+}
+func nonRecurrentJump(nums[] int, dp *[]int) bool{
+	for i:= len(nums)-2;i>=0;i-- {
+		maxJump := min(i+nums[i], len(nums)-1)
+		for j := i + 1; j<=maxJump; j++{
+			if (*dp)[j] == 1{
+				(*dp)[i] = 1
+				break
+			}
+		}
+	}
+	if (*dp)[0] == 1{
+		return true
+	}
+	return false
 }
 func recurrentJump(position int,nums []int, dp *[]int) bool{
 	if (*dp)[position] == 1{
