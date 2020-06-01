@@ -6,7 +6,8 @@ func main() {
 	nums := []int {1,3}
 	ans := searchInsert(nums, 2)
 	fmt.Println(ans)
-}func searchInsert(nums []int, target int) int {
+}
+func searchInsert(nums []int, target int) int {
 	if len(nums) == 1 {
 		if target == nums[0] {
 			return 0
