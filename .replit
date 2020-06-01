@@ -1,2 +1,2 @@
 language = "go"
-run = "src/"
+run = "go run src/question_1/main.go"
