@@ -1,6 +1,6 @@
 # leetcode
 记录Leetcode刷题思路
-
+[![Run on Repl.it](https://repl.it/badge/github/Louis-Ni/leetcode)](https://repl.it/github/Louis-Ni/leetcode)
 # 其他相关解题思路
 ## [LeetCode 31 - 下一个排序 - 解题思路记录 - Golang](https://juejin.im/post/5ed3d5616fb9a047e25d64ed)
 ## [LeetCode 18 - 4数之和 - 解题思路记录 - Golang](https://juejin.im/post/5ed25e30f265da76ca58e918)
@@ -14,3 +14,4 @@
 ## [LeetCode 15 - 3数之和 - 解题思路记录 - GoLang](https://juejin.im/post/5eca27ee6fb9a047a86217d9)
 ## [LeetCode 5 - 回文串 - 解题思路记录 - GoLang](https://juejin.im/post/5ec92a116fb9a0479c56c04c)
 ## [Github代码-持续更新](https://github.com/Louis-Ni/leetcode)
+1
