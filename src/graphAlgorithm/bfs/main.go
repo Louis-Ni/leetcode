@@ -12,6 +12,7 @@ func main() {
 	ans["F"] = []string{"D"}
 	bfs(ans, "E")
 }
+
 func bfs(graph map[string][]string, start string) {
 	queue := []string{}
 	isTouch := make(map[string]int)
