@@ -10,7 +10,7 @@ func main() {
 }
 
 func combinationSum(candidates []int, target int) [][]int {
-	res := [][]int{}
+	res := make([][]int,0)
 	tmp := []int{}
 	recursiveHelper(&res, tmp, candidates, target, 0)
 	return res
@@ -19,11 +19,7 @@ func combinationSum(candidates []int, target int) [][]int {
 func recursiveHelper(res *[][]int, tmp []int, candidates []int, target int, index int) {
 	if target <= 0 {
 		if target == 0 {
-			fmt.Println("1")
-			temp := tmp
-			fmt.Println(temp)
-			(*res) = append((*res), temp)
-			fmt.Println((*res))
+			*res = append(*res, append([]int{}, tmp...)) //此处一定要新建一个数组重新赋值
 		}
 		return
 	}
