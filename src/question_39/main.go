@@ -9,8 +9,6 @@ func main() {
 	fmt.Println(ans)
 }
 
-var ()
-
 func combinationSum(candidates []int, target int) [][]int {
 	res := [][]int{}
 	tmp := []int{}
