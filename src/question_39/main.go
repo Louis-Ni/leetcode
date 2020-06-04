@@ -9,18 +9,20 @@ func main() {
 	fmt.Println(ans)
 }
 
+var ()
+
 func combinationSum(candidates []int, target int) [][]int {
 	res := [][]int{}
 	tmp := []int{}
-	recursiveHelper(&res, &tmp, candidates, target, 0)
+	recursiveHelper(&res, tmp, candidates, target, 0)
 	return res
 }
 
-func recursiveHelper(res *[][]int, tmp *[]int, candidates []int, target int, index int) {
+func recursiveHelper(res *[][]int, tmp []int, candidates []int, target int, index int) {
 	if target <= 0 {
 		if target == 0 {
 			fmt.Println("1")
-			temp := (*tmp)
+			temp := tmp
 			fmt.Println(temp)
 			(*res) = append((*res), temp)
 			fmt.Println((*res))
@@ -28,8 +30,8 @@ func recursiveHelper(res *[][]int, tmp *[]int, candidates []int, target int, ind
 		return
 	}
 	for i := index; i < len(candidates); i++ {
-		(*tmp) = append((*tmp), candidates[i])
+		tmp = append(tmp, candidates[i])
 		recursiveHelper(res, tmp, candidates, target-candidates[i], i)
-		(*tmp) = (*tmp)[:len(*tmp)-1]
+		tmp = tmp[:len(tmp)-1]
 	}
 }
