@@ -33,5 +33,4 @@ func bfs(graph map[string][]string, start string) {
 		}
 		fmt.Println(node)
 	}
-
 }

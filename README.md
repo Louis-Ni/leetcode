@@ -2,6 +2,7 @@
 记录Leetcode刷题思路
 [![Run on Repl.it](https://repl.it/badge/github/Louis-Ni/leetcode)](https://repl.it/github/Louis-Ni/leetcode)
 # 其他相关解题思路
+## [一篇文章带你了解【图】的结构及相关【算法】](https://juejin.im/post/5edb95ea5188254313736c35)
 ## [LeetCode 31 - 下一个排序 - 解题思路记录 - Golang](https://juejin.im/post/5ed3d5616fb9a047e25d64ed)
 ## [LeetCode 18 - 4数之和 - 解题思路记录 - Golang](https://juejin.im/post/5ed25e30f265da76ca58e918)
 ## [LeetCode 55 - 跳跃游戏 - 解题思路记录(动态规划优化版) - GoLang](https://juejin.im/post/5ed2038be51d4578a475f39e)

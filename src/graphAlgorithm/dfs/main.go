@@ -13,21 +13,21 @@ func main() {
 	dfs(ans, "E")
 }
 func dfs(graph map[string][]string, start string) {
-	queue := []string{}
+	stack := []string{}
 	isTouch := make(map[string]int)
-	queue = append(queue, start)
+	stack = append(stack, start)
 	isTouch[start] = 1 //標記
 
-	for len(queue) > 0 {
-		n := len(queue)
-		node := queue[n-1] //彈出第一個
-		if len(queue) >= 1 {
-			queue = queue[:n-1]
+	for len(stack) > 0 {
+		n := len(stack)
+		node := stack[n-1] //彈出第一個
+		if len(stack) >= 1 {
+			stack = stack[:n-1]
 		}
 		nodes := graph[node]
 		for _, node := range nodes {
 			if _, ok := isTouch[node]; !ok {
-				queue = append(queue, node)
+				stack = append(stack, node)
 				isTouch[node] = 1
 			}
 		}
