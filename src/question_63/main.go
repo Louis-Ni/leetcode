@@ -3,41 +3,51 @@ package main
 import "fmt"
 
 func main() {
-	que := [][]int{{1, 0}}
+	que := [][]int{{0,1}}
 	ans := uniquePathsWithObstacles(que)
 	fmt.Println(ans)
 }
 func uniquePathsWithObstacles(obstacleGrid [][]int) int {
-	colLength := len(obstacleGrid)
-	rowLength := len(obstacleGrid[0])
+	m := len(obstacleGrid)
+	n := len(obstacleGrid[0])
+	res := make([][]int, m)
 
-	res := make([][]int, colLength)
 	for r := range res {
-		res[r] = make([]int, rowLength)
+		res[r] = make([]int, n)
 	}
 
-	for row := 0; row < rowLength; row++ {
-		if obstacleGrid[0][row] != 1 {
-			res[0][row] = 1
+	path := 0
+	if obstacleGrid[0][0] == 1 {
+		path = 0
+	} else {
+		path = 1
+	}
+
+	for row := 1; row < n && obstacleGrid[0][row] != 1; row++ {
+		if res[0][row] == 1 {
+			path = 0
 		}
+		res[0][row] = path
 	}
 
-	for col := 0; col < colLength; col++ {
-		if obstacleGrid[col][0] != 1 {
-			res[col][0] = 1
+	path = 1
+	for col := 0; col < m && obstacleGrid[col][0] != 1; col++ {
+		if res[col][0] == 1 {
+			path = 0
 		}
+		res[col][0] = path
 	}
 
-	for col := 1; col < colLength; col++ {
-		for row := 1; row < rowLength; row++ {
+	for col := 1; col < m; col++ {
+		for row := 1; row < n; row++ {
+			fmt.Println("into")
 			if obstacleGrid[col][row] == 1 {
-				res[col+1][row] = res[col+1][row-1]
-				res[col][row+1] = res[col-1][row+1]
-				continue
+				res[col][row] = 0
+			} else {
+				res[col][row] = res[col][row-1] + res[col-1][row]
 			}
-			res[col][row] = res[col-1][row] + res[col][row-1]
 		}
 	}
 	fmt.Println(res)
-	return res[colLength-1][rowLength-1]
+	return res[m-1][n-1]
 }
