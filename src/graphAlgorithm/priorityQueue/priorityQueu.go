@@ -1,4 +1,4 @@
-package main
+package priorityQueue
 
 type Node struct {
 	Ver string
