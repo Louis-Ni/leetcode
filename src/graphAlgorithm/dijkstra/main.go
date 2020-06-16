@@ -38,15 +38,15 @@ func dijkstra(graph map[string]map[string]int, start string) {
 
 	parent[start] = "None"
 
-	for pqueue.Len() > 0 {
+	for pqueue.Len() > 0 { //队列不为空的时候
 		vertNode := heap.Pop(pqueue).(priorityQueue.Node) //彈出第一個
 		vert:=vertNode.Ver //頂點名稱
-		length:=vertNode.Length //到頂點的距離
-		isTouch[vert] = 1 //拿出來以後才標記成為已經處理過了
+		length:=vertNode.Length //到该頂點的距離
+		isTouch[vert] = 1 //从队列拿出來以後才標記成為已經處理過了
 		nodes := graph[vert] //此處拿出來的是一個map 像這樣map[B:5 C:1]
-		for w, _ := range nodes {
+		for w, _ := range nodes {//遍历其中的nodes, 因为该nodes为一个顶点和权值的数组
 			if _, ok := isTouch[w]; !ok {
-				if length + graph[vert][w] < distance[w]{
+				if length + graph[vert][w] < distance[w]{ //因为刚开始的距离为无穷大
 					tmpNode := priorityQueue.Node{w,length + graph[vert][w]}
 					heap.Push(pqueue, tmpNode)
 					parent[w] = vert
