@@ -2,6 +2,7 @@
 记录Leetcode刷题思路
 [![Run on Repl.it](https://repl.it/badge/github/Louis-Ni/leetcode)](https://repl.it/github/Louis-Ni/leetcode)
 # 其他相关解题思路
+## [(超多动图)最短路径Dijkstra详解算法-看不懂算我输](https://juejin.im/post/5ee8fc48e51d452fef256410)
 ## [LeetCode54与59，一个口诀教会你旋转二维数组](https://juejin.im/post/5ee25fb351882542eb3ef6c5)
 ## [一篇文章带你了解【图】的结构及相关【算法】](https://juejin.im/post/5edb95ea5188254313736c35)
 ## [LeetCode 31 - 下一个排序 - 解题思路记录 - Golang](https://juejin.im/post/5ed3d5616fb9a047e25d64ed)
