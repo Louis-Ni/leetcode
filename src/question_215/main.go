@@ -12,6 +12,10 @@ func main() {
 }
 
 func findKthLargest(nums []int, k int) int {
+	if len(nums) == 1 {
+		return nums[0]
+	}
+
 	sort.Ints(nums)
 	fmt.Println(nums)
 	count := k
